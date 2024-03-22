@@ -51,7 +51,9 @@ public class Baraja {
     //agregar return
     };
    
-    public void cartasDisponibles(){};
+    public void cartasDisponibles(){
+        System.out.println("Hay " + (40 - cantCartasEntregadas) + " cartas disponibles");
+    };
     
     
     public ArrayList<Carta> darCartas(){
