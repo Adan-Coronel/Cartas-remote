@@ -56,8 +56,12 @@ public class Baraja {
     };
     
     
-    public ArrayList<Carta> darCartas(){
-     //agregar return
+    public ArrayList<Carta> darCartas(int cantCartas){
+        ArrayList<Carta> cartasDadas = new ArrayList<>();
+        if (cantCartas > cartas.size()) {
+            System.out.println("No hay suficientes cartas para entregarte :(");
+            return cartasDadas;
+        }
     };
     
     public void cartasMonton(){
