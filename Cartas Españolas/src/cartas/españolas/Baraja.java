@@ -56,13 +56,22 @@ public class Baraja {
     };
     
     
-    public ArrayList<Carta> darCartas(int cantCartas){
+    public ArrayList<Carta> darCartas(int cantCartas) {
         ArrayList<Carta> cartasDadas = new ArrayList<>();
         if (cantCartas > cartas.size()) {
             System.out.println("No hay suficientes cartas para entregarte :(");
             return cartasDadas;
         }
-    };
+
+        for (int i = 0; i < cantCartas; i++) {
+            cartasDadas.add(siguienteCarta());
+            cantCartasEntregadas++;
+        }
+
+        return cartasDadas;
+    }
+
+    ;
     
     public void cartasMonton(){
          System.out.println("El montón tiene " + cantCartasEntregadas + " cartas");
