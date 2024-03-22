@@ -31,8 +31,18 @@ public class Baraja {
      //agregar return
     };
     
-    public void cartasMonton(){};
+    public void cartasMonton(){
+         System.out.println("El montón tiene " + cantCartasEntregadas + " cartas");
+        monton.forEach((carta) -> {
+            System.out.println(monton.indexOf(carta) + " - " + carta.toString());
+        });
+    };
     
-    public void mostrarBaraja(){};
+    public void mostrarBaraja(){
+        System.out.println("La baraja es: ");
+        baraja.forEach((carta) -> {
+            System.out.println(baraja.indexOf(carta) + " - " + carta.toString());
+        });
+    };
     
 }
