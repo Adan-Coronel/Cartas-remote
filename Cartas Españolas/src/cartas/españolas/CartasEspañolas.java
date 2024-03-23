@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package cartas.españolas;
 
-/**
- *
- * @author Adan
- */
 public class CartasEspañolas {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Baraja mazo = new Baraja();
+        mazo.barajar();
+        mazo.cartasDisponibles();
+        mazo.darCartas(41);
+        mazo.cartasMonton();
+        mazo.mostrarBaraja();
+
     }
-    
+
 }
