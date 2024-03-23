@@ -3,38 +3,35 @@ package cartas.españolas;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class Baraja {
+
     private ArrayList<Carta> cartas;
     private int cantCartasEntregadas;
     private ArrayList<Carta> monton;
 
     public Baraja() {
-        cartas= new ArrayList<Carta>();
+        cartas = new ArrayList<Carta>();
 
-        cantCartasEntregadas=0;
+        cantCartasEntregadas = 0;
         llenarMazo();
-        monton= new ArrayList<Carta>();
+        monton = new ArrayList<Carta>();
     }
-    
-    public void llenarMazo(){
-    
+
+    public void llenarMazo() {
+
         for (int i = 0; i < 10; i++) {
-            
-            if(i==8){
+
+            if (i == 8) {
                 cartas.add(new Carta("Espada", 12));
                 cartas.add(new Carta("Oro", 12));
                 cartas.add(new Carta("Basto", 12));
                 cartas.add(new Carta("Copa", 12));
-            }
-            else if(i==9){
+            } else if (i == 9) {
                 cartas.add(new Carta("Espada", 11));
                 cartas.add(new Carta("Oro", 11));
                 cartas.add(new Carta("Basto", 11));
-                cartas.add(new Carta("Copa", 11));            
-            }
-            
-            else{
+                cartas.add(new Carta("Copa", 11));
+            } else {
                 cartas.add(new Carta("Espada", i));
                 cartas.add(new Carta("Oro", i));
                 cartas.add(new Carta("Basto", i));
@@ -42,18 +39,35 @@ public class Baraja {
             }
         }
     }
-    
-    public void barajar(){
+
+    public void barajar() {
         Collections.shuffle(cartas);
-    };
+    }
+
+    ;
     
-    public Carta siguienteCarta(){
-    //agregar return
-    };
+    public Carta siguienteCarta() {
+        if (cartas.isEmpty()) {
+            System.out.println("No quedan cartas disponibles");
+            return null;
+        } else {
+            if (cartas.size() == 1) {
+                System.out.println("Se entrega la ultima carta, ya no quedan mas cartas.");
+            }
+            Carta aux = cartas.get(cartas.size() - 1);
+            cartas.remove(cartas.size() - 1);
+            monton.add(aux);
+            return aux;
+        }
+    }
+
+    ;
    
-    public void cartasDisponibles(){
+    public void cartasDisponibles() {
         System.out.println("Hay " + (40 - cantCartasEntregadas) + " cartas disponibles");
-    };
+    }
+
+    ;
     
     
     public ArrayList<Carta> darCartas(int cantCartas) {
@@ -73,18 +87,21 @@ public class Baraja {
 
     ;
     
-    public void cartasMonton(){
-         System.out.println("El montón tiene " + cantCartasEntregadas + " cartas");
+    public void cartasMonton() {
+        System.out.println("El montón tiene " + cantCartasEntregadas + " cartas");
         monton.forEach((carta) -> {
             System.out.println(monton.indexOf(carta) + " - " + carta.toString());
         });
-    };
+    }
+
+    ;
     
-    public void mostrarBaraja(){
+    public void mostrarBaraja() {
         System.out.println("La baraja es: ");
         cartas.forEach((carta) -> {
             System.out.println(cartas.indexOf(carta) + " - " + carta.toString());
         });
-    };
-    
+    }
+;
+
 }
